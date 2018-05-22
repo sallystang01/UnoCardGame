@@ -1,0 +1,11 @@
+C:\Data\CardGame\Uno\Uno\bin\Debug\Uno.exe.config
+C:\Data\CardGame\Uno\Uno\bin\Debug\Uno.exe
+C:\Data\CardGame\Uno\Uno\bin\Debug\Uno.pdb
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.csprojResolveAssemblyReference.cache
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.Startup.resources
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.Properties.Resources.resources
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.csproj.GenerateResource.cache
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.csproj.CoreCompileInputs.cache
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.exe
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.pdb
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.Game.resources
