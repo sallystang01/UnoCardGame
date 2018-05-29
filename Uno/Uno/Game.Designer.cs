@@ -87,7 +87,10 @@
             this.Controls.Add(this.lblGamePlayerThree);
             this.Controls.Add(this.lblGamePlayerTwo);
             this.Controls.Add(this.lblGamePlayerOne);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Game";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
             this.Load += new System.EventHandler(this.Game_Load);

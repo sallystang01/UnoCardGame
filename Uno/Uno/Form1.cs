@@ -16,6 +16,8 @@ namespace Uno
         {
             InitializeComponent();
         }
+
+        Players cPlayers = new Players();
         public static Game frmGame = new Game();
         private void Startup_Load(object sender, EventArgs e)
         {
@@ -103,7 +105,7 @@ namespace Uno
 
             try
             {
-               
+
                 if (cbPlayerTwo.Enabled == false)
                 {
                     MessageBox.Show("You need at least two players to get started!");
@@ -126,9 +128,16 @@ namespace Uno
                 {
                     this.Visible = false;
                     frmGame.Show();
-                    
-                }
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            try
+                {
                 if (cbNumberOfPlayers.Text == "2")
                 {
                     frmGame.lblGamePlayerThree.BackColor = Color.Gray;
@@ -138,21 +147,52 @@ namespace Uno
                 else if (cbNumberOfPlayers.Text == "3")
                 {
 
+                    frmGame.lblGamePlayerThree.BackColor = Color.Transparent;
                     frmGame.lblGamePlayerFour.BackColor = Color.Gray;
 
                 }
 
+                else if (cbNumberOfPlayers.Text == "4")
+                {
+
+                    frmGame.lblGamePlayerThree.BackColor = Color.Transparent;
+                    frmGame.lblGamePlayerFour.BackColor = Color.Transparent;
+                }
+                }
+              
+
+                catch
+                {
+                    MessageBox.Show("Error..");
+                }
+
+                string PlayerOne = tbPlayerOne.Text;
+                string PlayerTwo = tbPlayerTwo.Text;
+                string PlayerThree = tbPlayerThree.Text;
+                string PlayerFour = tbPlayerFour.Text;
+
+                string pOne = cPlayers.NewPlayerOne(PlayerOne, 0);
+                frmGame.lblGamePlayerOne.Text = pOne;
+                string pTwo = cPlayers.NewPlayerTwo(PlayerTwo, 0);
+                frmGame.lblGamePlayerTwo.Text = pTwo;
+                string pThree = cPlayers.NewPlayerThree(PlayerThree, 0);
+                frmGame.lblGamePlayerThree.Text = pThree;
+                string pFour = cPlayers.NewPlayerFour(PlayerFour, 0);
+                frmGame.lblGamePlayerFour.Text = pFour;
+
+
 
             }
 
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                
-            }
-        }
+            
+        
 
         private void Startup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Startup_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

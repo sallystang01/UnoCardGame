@@ -277,9 +277,13 @@
             this.Controls.Add(this.lblPlayerOne);
             this.Controls.Add(this.tbPlayerOne);
             this.Controls.Add(this.lblWelcome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Startup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Startup_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Startup_FormClosed);
             this.Load += new System.EventHandler(this.Startup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
