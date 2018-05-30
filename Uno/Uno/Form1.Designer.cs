@@ -47,6 +47,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnLoadPlayerOne = new System.Windows.Forms.Button();
+            this.btnLoadPlayerTwo = new System.Windows.Forms.Button();
+            this.btnLoadPlayerThree = new System.Windows.Forms.Button();
+            this.btnLoadPlayerFour = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -62,6 +66,7 @@
             // 
             // tbPlayerOne
             // 
+            this.tbPlayerOne.Enabled = false;
             this.tbPlayerOne.Location = new System.Drawing.Point(147, 132);
             this.tbPlayerOne.Name = "tbPlayerOne";
             this.tbPlayerOne.Size = new System.Drawing.Size(100, 20);
@@ -253,11 +258,55 @@
             this.label5.Text = "Player Type:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnLoadPlayerOne
+            // 
+            this.btnLoadPlayerOne.Location = new System.Drawing.Point(6, 128);
+            this.btnLoadPlayerOne.Name = "btnLoadPlayerOne";
+            this.btnLoadPlayerOne.Size = new System.Drawing.Size(43, 23);
+            this.btnLoadPlayerOne.TabIndex = 19;
+            this.btnLoadPlayerOne.Text = "Load";
+            this.btnLoadPlayerOne.UseVisualStyleBackColor = true;
+            this.btnLoadPlayerOne.Click += new System.EventHandler(this.btnLoadPlayerOne_Click);
+            // 
+            // btnLoadPlayerTwo
+            // 
+            this.btnLoadPlayerTwo.Enabled = false;
+            this.btnLoadPlayerTwo.Location = new System.Drawing.Point(6, 154);
+            this.btnLoadPlayerTwo.Name = "btnLoadPlayerTwo";
+            this.btnLoadPlayerTwo.Size = new System.Drawing.Size(43, 23);
+            this.btnLoadPlayerTwo.TabIndex = 20;
+            this.btnLoadPlayerTwo.Text = "Load";
+            this.btnLoadPlayerTwo.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadPlayerThree
+            // 
+            this.btnLoadPlayerThree.Enabled = false;
+            this.btnLoadPlayerThree.Location = new System.Drawing.Point(6, 180);
+            this.btnLoadPlayerThree.Name = "btnLoadPlayerThree";
+            this.btnLoadPlayerThree.Size = new System.Drawing.Size(43, 23);
+            this.btnLoadPlayerThree.TabIndex = 21;
+            this.btnLoadPlayerThree.Text = "Load";
+            this.btnLoadPlayerThree.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadPlayerFour
+            // 
+            this.btnLoadPlayerFour.Enabled = false;
+            this.btnLoadPlayerFour.Location = new System.Drawing.Point(6, 205);
+            this.btnLoadPlayerFour.Name = "btnLoadPlayerFour";
+            this.btnLoadPlayerFour.Size = new System.Drawing.Size(43, 23);
+            this.btnLoadPlayerFour.TabIndex = 22;
+            this.btnLoadPlayerFour.Text = "Load";
+            this.btnLoadPlayerFour.UseVisualStyleBackColor = true;
+            // 
             // Startup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 308);
+            this.Controls.Add(this.btnLoadPlayerFour);
+            this.Controls.Add(this.btnLoadPlayerThree);
+            this.Controls.Add(this.btnLoadPlayerTwo);
+            this.Controls.Add(this.btnLoadPlayerOne);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -311,6 +360,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnLoadPlayerOne;
+        private System.Windows.Forms.Button btnLoadPlayerTwo;
+        private System.Windows.Forms.Button btnLoadPlayerThree;
+        private System.Windows.Forms.Button btnLoadPlayerFour;
     }
 }
 

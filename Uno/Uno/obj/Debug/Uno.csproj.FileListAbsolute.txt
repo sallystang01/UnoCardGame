@@ -9,3 +9,4 @@ C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.csproj.CoreCompileInputs.cache
 C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.exe
 C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.pdb
 C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.Game.resources
+C:\Data\CardGame\Uno\Uno\obj\Debug\Uno.ChoosePlayer.resources

@@ -3,49 +3,71 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Uno
 {
     class Players
     {
-        public string NewPlayerOne(string PlayerName, int Score)
+        
+
+        public string NewPlayerOne(string PlayerName, int Wins)
         {
             string pName = PlayerName;
-            int pScore = Score;
+            int pWins = Wins;
+            using (StreamWriter sw = new StreamWriter("Players.txt"))
+            {
+                sw.WriteLine(pName, pWins);
+            }
 
-
-            return pName;
+                return pName;
             
         }
 
-        public string NewPlayerTwo(string PlayerName, int Score)
+        public string NewPlayerTwo(string PlayerName, int Wins)
         {
-            string pTwoName = PlayerName;
-            int pScore = Score;
+            
+
+            string pName = PlayerName;
+            int pWins = Wins;
+            using (StreamWriter sw = new StreamWriter("Players.txt"))
+            {
+                sw.WriteLine(pName, pWins);
+            }
 
 
-            return pTwoName;
+            return pName;
 
         }
 
-        public string NewPlayerThree(string PlayerName, int Score)
+        public string NewPlayerThree(string PlayerName, int Wins)
         {
-            string pThreeName = PlayerName;
-            int pScore = Score;
+            string pName = PlayerName;
+            int pWins = Wins;
+            using (StreamWriter sw = new StreamWriter("Players.txt"))
+            {
+                sw.WriteLine(pName, pWins);
+            }
 
-
-            return pThreeName;
+            return pName;
 
         }
 
-        public string NewPlayerFour(string PlayerName, int Score)
+        public string NewPlayerFour(string PlayerName, int Wins)
         {
-            string pFourName = PlayerName;
-            int pScore = Score;
+            string pName = PlayerName;
+            int pWins = Wins;
+            using (StreamWriter sw = new StreamWriter("Players.txt"))
+            {
+                sw.WriteLine(pName, pWins);
+                
+            }
 
-
-            return pFourName;
+            return pName;
 
         }
+
+        
+        
     }
 }

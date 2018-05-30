@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Uno
 {
@@ -54,8 +55,8 @@ namespace Uno
            
             if (cbPlayerTwo.Text != "Player Type..")
             {
-                tbPlayerTwo.Enabled = true;
-                tbPlayerTwo.Focus();
+                btnLoadPlayerTwo.Enabled = true;
+                btnLoadPlayerTwo.Focus();
             }
         }
 
@@ -63,8 +64,8 @@ namespace Uno
         {
             if (cbPlayerThree.Text != "Player Type..")
             {
-                tbPlayerThree.Enabled = true;
-                tbPlayerThree.Focus();
+                btnLoadPlayerThree.Enabled = true;
+                btnLoadPlayerThree.Focus();
             }
         }
 
@@ -72,8 +73,8 @@ namespace Uno
         {
             if (cbPlayerFour.Text != "Player Type..")
             {
-                tbPlayerFour.Enabled = true;
-                tbPlayerFour.Focus();
+                btnLoadPlayerFour.Enabled = true;
+                btnLoadPlayerFour.Focus();
             }
         }
 
@@ -81,21 +82,21 @@ namespace Uno
         {
             if (cbNumberOfPlayers.Text == "2")
             {
-                cbPlayerTwo.Enabled = true;
-                cbPlayerThree.Enabled = false;
-                cbPlayerFour.Enabled = false;
+                btnLoadPlayerTwo.Enabled = true;
+                btnLoadPlayerThree.Enabled = false;
+                btnLoadPlayerFour.Enabled = false;
             }
             if (cbNumberOfPlayers.Text == "3")
             {
-                cbPlayerTwo.Enabled = true;
-                cbPlayerThree.Enabled = true;
-                cbPlayerFour.Enabled = false;
+                btnLoadPlayerTwo.Enabled = true;
+                btnLoadPlayerThree.Enabled = true;
+                btnLoadPlayerFour.Enabled = false;
             }
             if (cbNumberOfPlayers.Text == "4")
             {
-                cbPlayerTwo.Enabled = true;
-                cbPlayerThree.Enabled = true;
-                cbPlayerFour.Enabled = true;
+                btnLoadPlayerTwo.Enabled = true;
+                btnLoadPlayerThree.Enabled = true;
+                btnLoadPlayerFour.Enabled = true;
             }
         }
 
@@ -110,16 +111,16 @@ namespace Uno
                 {
                     MessageBox.Show("You need at least two players to get started!");
                 }
-                else if (tbPlayerTwo.Enabled == false & cbPlayerTwo.Enabled == true)
+                else if (btnLoadPlayerTwo.Enabled == false & cbPlayerTwo.Enabled == true)
                 {
                     MessageBox.Show("Please choose the player type for Player Two!");
                 }
 
-                else if (tbPlayerThree.Enabled == false & cbNumberOfPlayers.Text == "3")
+                else if (btnLoadPlayerThree.Enabled == false & cbNumberOfPlayers.Text == "3")
                 {
                     MessageBox.Show("Please choose the player type for Player Three!");
                 }
-                else if (tbPlayerFour.Enabled == false & cbNumberOfPlayers.Text == "4")
+                else if (btnLoadPlayerFour.Enabled == false & cbNumberOfPlayers.Text == "4")
                 {
                     MessageBox.Show("Please choose the player type for Player Four!");
                 }
@@ -195,6 +196,14 @@ namespace Uno
         private void Startup_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLoadPlayerOne_Click(object sender, EventArgs e)
+        {
+            ChoosePlayer frmChoose = new ChoosePlayer();
+
+            frmChoose.Show();
+
         }
     }
 }
