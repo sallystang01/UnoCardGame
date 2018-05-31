@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.lbPlayers = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblChoose = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.lblWins = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.tbNewPlayer = new System.Windows.Forms.TextBox();
             this.btnNew = new System.Windows.Forms.Button();
+            this.lblPlayerName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbPlayers
@@ -46,15 +47,15 @@
             this.lbPlayers.TabIndex = 0;
             this.lbPlayers.SelectedIndexChanged += new System.EventHandler(this.lbPlayers_SelectedIndexChanged);
             // 
-            // label1
+            // lblChoose
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(132, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Choose a player";
+            this.lblChoose.AutoSize = true;
+            this.lblChoose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChoose.Location = new System.Drawing.Point(123, 9);
+            this.lblChoose.Name = "lblChoose";
+            this.lblChoose.Size = new System.Drawing.Size(199, 25);
+            this.lblChoose.TabIndex = 1;
+            this.lblChoose.Text = "Choose a Player1";
             // 
             // btnLoad
             // 
@@ -64,16 +65,17 @@
             this.btnLoad.TabIndex = 2;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // lblWins
             // 
             this.lblWins.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblWins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWins.Location = new System.Drawing.Point(12, 86);
+            this.lblWins.Location = new System.Drawing.Point(12, 123);
             this.lblWins.Name = "lblWins";
-            this.lblWins.Size = new System.Drawing.Size(107, 70);
+            this.lblWins.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblWins.Size = new System.Drawing.Size(107, 42);
             this.lblWins.TabIndex = 3;
-            this.lblWins.Text = "0 Wins";
             this.lblWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDate
@@ -84,7 +86,6 @@
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(107, 70);
             this.lblDate.TabIndex = 4;
-            this.lblDate.Text = "Last Played: 05/29/2018";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbNewPlayer
@@ -104,17 +105,28 @@
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
+            // lblPlayerName
+            // 
+            this.lblPlayerName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerName.Location = new System.Drawing.Point(12, 86);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(107, 37);
+            this.lblPlayerName.TabIndex = 7;
+            this.lblPlayerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ChoosePlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 304);
+            this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.tbNewPlayer);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblWins);
             this.Controls.Add(this.btnLoad);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblChoose);
             this.Controls.Add(this.lbPlayers);
             this.Name = "ChoosePlayer";
             this.Text = "ChoosePlayer";
@@ -127,11 +139,12 @@
         #endregion
 
         private System.Windows.Forms.ListBox lbPlayers;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label lblWins;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TextBox tbNewPlayer;
         private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Label lblPlayerName;
+        public System.Windows.Forms.Label lblChoose;
     }
 }

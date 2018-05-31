@@ -21,31 +21,44 @@ namespace Uno
         public string[] Player = new string[20];
         public int[] Wins = new int[20];
         public string[] DatePlayed = new string[20];
+        public string pName;
 
-        Players cPlayers = new Players();
         Startup frmStart = new Startup();
 
         private void ChoosePlayer_Load(object sender, EventArgs e)
         {
-            StreamReader sr = File.OpenText("Players.csv");
-            string line;
-            int count = 0;
-            char[] delim = { ',' };
-
-            while (!sr.EndOfStream)
+            try
             {
-                line = sr.ReadLine();
-                string[] tokens = line.Split(delim);
-                lbPlayers.Items.Add(tokens[0]);
-                Player[count] = tokens[0];
-                Wins[count] = int.Parse(tokens[1]);
-                DatePlayed[count] = tokens[2];
+                StreamReader sr;
+                string line;
+                int count = 0;
+                char[] delim = { ',' };
 
-                
-                count++;
+                sr = File.OpenText("Players.csv");
+
+                while (!sr.EndOfStream)
+                {
+                    line = sr.ReadLine();
+                    string[] tokens = line.Split(delim);
+                    lbPlayers.Items.Add(tokens[0]);
+                    Player[count] = tokens[0];
+                    Wins[count] = int.Parse(tokens[2]);
+                    DatePlayed[count] = tokens[1];
+
+
+                    count++;
+                }
+
+                sr.Close();
+
+
             }
-            
-            sr.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -59,16 +72,17 @@ namespace Uno
                 }
                 else
                 {
-                    
+
                     string newPlayer = tbNewPlayer.Text;
                     StreamWriter sw = new StreamWriter("Players.csv", true);
                     sw.WriteLine("{0},{1},{2}", newPlayer, DateTime.Now.Date, 0);
+                    lbPlayers.Items.Add(newPlayer);
                     sw.Close();
 
-                    lbPlayers.Items.Add(newPlayer);
+
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -78,7 +92,24 @@ namespace Uno
         {
             lblWins.Text = Wins[lbPlayers.SelectedIndex].ToString();
             lblDate.Text = DatePlayed[lbPlayers.SelectedIndex];
+            lblPlayerName.Text = Player[lbPlayers.SelectedIndex];
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            pName = lblPlayerName.Text;
+            if (pName == "")
+            {
+
+                MessageBox.Show("Please choose a player first!");
+
+            }
+            else
+            {
+                frmStart.tbPlayerOne.Text = pName;
+                this.Close();
+            }
         }
     }
-    }
 
+}

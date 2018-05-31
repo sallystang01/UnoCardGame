@@ -18,7 +18,7 @@ namespace Uno
             InitializeComponent();
         }
 
-        Players cPlayers = new Players();
+        
         public static Game frmGame = new Game();
         private void Startup_Load(object sender, EventArgs e)
         {
@@ -167,19 +167,9 @@ namespace Uno
                     MessageBox.Show("Error..");
                 }
 
-                string PlayerOne = tbPlayerOne.Text;
-                string PlayerTwo = tbPlayerTwo.Text;
-                string PlayerThree = tbPlayerThree.Text;
-                string PlayerFour = tbPlayerFour.Text;
+               
 
-                string pOne = cPlayers.NewPlayerOne(PlayerOne, 0);
-                frmGame.lblGamePlayerOne.Text = pOne;
-                string pTwo = cPlayers.NewPlayerTwo(PlayerTwo, 0);
-                frmGame.lblGamePlayerTwo.Text = pTwo;
-                string pThree = cPlayers.NewPlayerThree(PlayerThree, 0);
-                frmGame.lblGamePlayerThree.Text = pThree;
-                string pFour = cPlayers.NewPlayerFour(PlayerFour, 0);
-                frmGame.lblGamePlayerFour.Text = pFour;
+                
 
 
 
