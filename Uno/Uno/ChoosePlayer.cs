@@ -18,12 +18,18 @@ namespace Uno
             InitializeComponent();
         }
 
+        
+        public static Startup start = new Startup();
         public string[] Player = new string[20];
         public int[] Wins = new int[20];
         public string[] DatePlayed = new string[20];
-        public string pName;
 
-        Startup frmStart = new Startup();
+        public string p1Name;
+        public int p1Wins;
+       
+
+
+
 
         private void ChoosePlayer_Load(object sender, EventArgs e)
         {
@@ -97,8 +103,9 @@ namespace Uno
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            pName = lblPlayerName.Text;
-            if (pName == "")
+           
+
+            if (p1Name == "")
             {
 
                 MessageBox.Show("Please choose a player first!");
@@ -106,10 +113,13 @@ namespace Uno
             }
             else
             {
-                frmStart.tbPlayerOne.Text = pName;
-                this.Close();
+
+                p1Name = lblPlayerName.Text;
+                p1Wins = int.Parse(lblWins.Text);
+                Players players = new Players(p1Name, p1Wins);
+
+            }
             }
         }
     }
 
-}

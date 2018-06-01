@@ -344,11 +344,8 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblPlayerOne;
         private System.Windows.Forms.Label lblPlayerTwo;
-        private System.Windows.Forms.TextBox tbPlayerTwo;
         private System.Windows.Forms.Label lblPlayerThree;
-        private System.Windows.Forms.TextBox tbPlayerThree;
         private System.Windows.Forms.Label lblPlayerFour;
-        private System.Windows.Forms.TextBox tbPlayerFour;
         private System.Windows.Forms.Button btnBegin;
         private System.Windows.Forms.ComboBox cbPlayerTwo;
         private System.Windows.Forms.ComboBox cbPlayerThree;
@@ -364,6 +361,9 @@
         private System.Windows.Forms.Button btnLoadPlayerThree;
         private System.Windows.Forms.Button btnLoadPlayerFour;
         public System.Windows.Forms.TextBox tbPlayerOne;
+        public System.Windows.Forms.TextBox tbPlayerTwo;
+        public System.Windows.Forms.TextBox tbPlayerThree;
+        public System.Windows.Forms.TextBox tbPlayerFour;
     }
 }
 

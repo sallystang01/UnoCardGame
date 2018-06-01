@@ -137,8 +137,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbPlayers;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label lblWins;
         private System.Windows.Forms.Label lblDate;
@@ -146,5 +144,6 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label lblPlayerName;
         public System.Windows.Forms.Label lblChoose;
+        public System.Windows.Forms.ListBox lbPlayers;
     }
 }

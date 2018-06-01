@@ -19,9 +19,16 @@ namespace Uno
         }
 
         
+        
+        ChoosePlayer frmChoose = new ChoosePlayer();
+        public string pOne;
         public static Game frmGame = new Game();
         private void Startup_Load(object sender, EventArgs e)
         {
+
+            pOne = Players.player1.Name;
+            lblPlayerOne.Text = pOne;
+           
             try
             {
                 tbPlayerOne.Text = "P1";
@@ -180,19 +187,21 @@ namespace Uno
 
         private void Startup_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void Startup_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void btnLoadPlayerOne_Click(object sender, EventArgs e)
         {
-            ChoosePlayer frmChoose = new ChoosePlayer();
 
-            frmChoose.Show();
+            ChoosePlayer choose = new ChoosePlayer();
+
+            choose.ShowDialog();
+            this.Hide();
 
         }
     }
