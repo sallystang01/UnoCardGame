@@ -14,7 +14,6 @@ C:\Data\UnoCardGame\Uno\Uno\bin\Debug\Uno.exe.config
 C:\Data\UnoCardGame\Uno\Uno\bin\Debug\Uno.exe
 C:\Data\UnoCardGame\Uno\Uno\bin\Debug\Uno.pdb
 C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.csprojAssemblyReference.cache
-C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.ChoosePlayer.resources
 C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.Startup.resources
 C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.Game.resources
 C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.Properties.Resources.resources

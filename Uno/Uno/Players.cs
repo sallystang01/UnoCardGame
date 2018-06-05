@@ -10,15 +10,18 @@ namespace Uno
     {
 
         public string Name;
+        public int Wins;
 
-        public Players Parse(string str)
+        public Players(string name)
         {
-            var player = new Players();
-            player.Name = str;
-
-            return player;
+            this.Name = name;
         }
 
+        public Players(string name, int wins)
+        {
+            this.Name = name;
+            this.Wins = wins;
+        }
 
     }
 }

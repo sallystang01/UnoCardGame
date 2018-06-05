@@ -18,23 +18,59 @@ namespace Uno
             InitializeComponent();
         }
 
-        
-        
-        ChoosePlayer frmChoose = new ChoosePlayer();
+
+        public string[] Player = new string[20];
+        public int[] Wins = new int[20];
+        public string[] DatePlayed = new string[20];
+
+        public string p1Name;
+        public int p1Wins;
+        public string p2Name;
+        public int p2Wins;
+        public string p3Name;
+        public int p3Wins;
+        public string p4Name;
+        public int p4Wins;
+
         public string pOne;
         public static Game frmGame = new Game();
         private void Startup_Load(object sender, EventArgs e)
         {
 
 
+            try
+            {
+                StreamReader sr;
+                string line;
+                int count = 0;
+                char[] delim = { ',' };
 
-          
+                sr = File.OpenText("Players.csv");
 
-           
-            
-            
-           
-           
+                while (!sr.EndOfStream)
+                {
+                    line = sr.ReadLine();
+                    string[] tokens = line.Split(delim);
+                    lbPlayers.Items.Add(tokens[0]);
+                    Player[count] = tokens[0];
+                    Wins[count] = int.Parse(tokens[2]);
+                    DatePlayed[count] = tokens[1];
+
+
+                    count++;
+                }
+
+                sr.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
             try
             {
                 tbPlayerOne.Text = "P1";
@@ -68,8 +104,8 @@ namespace Uno
            
             if (cbPlayerTwo.Text != "Player Type..")
             {
-                btnLoadPlayerTwo.Enabled = true;
-                btnLoadPlayerTwo.Focus();
+                btnLoadPtwo.Enabled = true;
+                btnLoadPtwo.Focus();
             }
         }
 
@@ -77,8 +113,8 @@ namespace Uno
         {
             if (cbPlayerThree.Text != "Player Type..")
             {
-                btnLoadPlayerThree.Enabled = true;
-                btnLoadPlayerThree.Focus();
+                btnLoadPthree.Enabled = true;
+                btnLoadPthree.Focus();
             }
         }
 
@@ -86,8 +122,8 @@ namespace Uno
         {
             if (cbPlayerFour.Text != "Player Type..")
             {
-                btnLoadPlayerFour.Enabled = true;
-                btnLoadPlayerFour.Focus();
+                btnLoadPfour.Enabled = true;
+                btnLoadPfour.Focus();
             }
         }
 
@@ -95,21 +131,21 @@ namespace Uno
         {
             if (cbNumberOfPlayers.Text == "2")
             {
-                btnLoadPlayerTwo.Enabled = true;
-                btnLoadPlayerThree.Enabled = false;
-                btnLoadPlayerFour.Enabled = false;
+                btnLoadPtwo.Enabled = true;
+                btnLoadPthree.Enabled = false;
+                btnLoadPfour.Enabled = false;
             }
             if (cbNumberOfPlayers.Text == "3")
             {
-                btnLoadPlayerTwo.Enabled = true;
-                btnLoadPlayerThree.Enabled = true;
-                btnLoadPlayerFour.Enabled = false;
+                btnLoadPtwo.Enabled = true;
+                btnLoadPthree.Enabled = true;
+                btnLoadPfour.Enabled = false;
             }
             if (cbNumberOfPlayers.Text == "4")
             {
-                btnLoadPlayerTwo.Enabled = true;
-                btnLoadPlayerThree.Enabled = true;
-                btnLoadPlayerFour.Enabled = true;
+                btnLoadPtwo.Enabled = true;
+                btnLoadPthree.Enabled = true;
+                btnLoadPfour.Enabled = true;
             }
         }
 
@@ -124,16 +160,16 @@ namespace Uno
                 {
                     MessageBox.Show("You need at least two players to get started!");
                 }
-                else if (btnLoadPlayerTwo.Enabled == false & cbPlayerTwo.Enabled == true)
+                else if (btnLoadPtwo.Enabled == false & cbPlayerTwo.Enabled == true)
                 {
                     MessageBox.Show("Please choose the player type for Player Two!");
                 }
 
-                else if (btnLoadPlayerThree.Enabled == false & cbNumberOfPlayers.Text == "3")
+                else if (btnLoadPthree.Enabled == false & cbNumberOfPlayers.Text == "3")
                 {
                     MessageBox.Show("Please choose the player type for Player Three!");
                 }
-                else if (btnLoadPlayerFour.Enabled == false & cbNumberOfPlayers.Text == "4")
+                else if (btnLoadPfour.Enabled == false & cbNumberOfPlayers.Text == "4")
                 {
                     MessageBox.Show("Please choose the player type for Player Four!");
                 }
@@ -141,6 +177,10 @@ namespace Uno
                 else
                 {
                     this.Visible = false;
+                    frmGame.lblGamePlayerOne.Text = tbPlayerOne.Text;
+                    frmGame.lblGamePlayerTwo.Text = tbPlayerTwo.Text;
+                    frmGame.lblGamePlayerThree.Text = tbPlayerThree.Text;
+                    frmGame.lblGamePlayerFour.Text = tbPlayerFour.Text;
                     frmGame.Show();
 
                 }
@@ -188,36 +228,234 @@ namespace Uno
 
             }
 
-            
         
 
-        private void Startup_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnNew_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (tbNewPlayer.Text == "")
+                {
+                    MessageBox.Show("Please enter a name!");
+
+                }
+                else
+                {
+
+                    string newPlayer = tbNewPlayer.Text;
+                    StreamWriter sw = new StreamWriter("Players.csv", true);
+                    sw.WriteLine("{0},{1},{2}", newPlayer, DateTime.Now.Date, 0);
+                    lbPlayers.Items.Add(newPlayer);
+                    sw.Close();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lbPlayers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblWins.Text = Wins[lbPlayers.SelectedIndex].ToString();
+            lblDate.Text = DatePlayed[lbPlayers.SelectedIndex];
+            lblPlayerName.Text = Player[lbPlayers.SelectedIndex];
+        }
+
+       
+
+
+        private void lbPlayers_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            lblWins.Text = Wins[lbPlayers.SelectedIndex].ToString();
+            lblDate.Text = DatePlayed[lbPlayers.SelectedIndex];
+            lblPlayerName.Text = Player[lbPlayers.SelectedIndex];
+        }
+
+      
+
+        private void btnNew_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbNewPlayer.Text == "")
+                {
+                    MessageBox.Show("Please enter a name!");
+
+                }
+                else
+                {
+
+                    string newPlayer = tbNewPlayer.Text;
+                    StreamWriter sw = new StreamWriter("Players.csv", true);
+                    sw.WriteLine("{0},{1},{2}", newPlayer, DateTime.Now.Date, 0);
+                    lbPlayers.Items.Add(newPlayer);
+                    sw.Close();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLoadPone_Click(object sender, EventArgs e)
+        {
+            lblChoose.Text = "Choose a Player1";
+
+            lbPlayers.Visible = true;
+            lblChoose.Visible = true;
+            lblDate.Visible = true;
+            lblWins.Visible = true;
+            tbNewPlayer.Visible = true;
+            btnNew.Visible = true;
+            btnLoad.Visible = true;
+            lblPlayerName.Visible = true;
+
+        }
+
+        private void btnLoad_Click_2(object sender, EventArgs e)
+        {
+
+
+            if (p1Name == "")
+            {
+
+                MessageBox.Show("Please choose a player first!");
+
+            }
+            else
+            {
+
+                if (lblChoose.Text == "Choose a Player1")
+                {
+
+                    p1Name = lblPlayerName.Text;
+                    p1Wins = int.Parse(lblWins.Text);
+
+                    var playerone = new Players(p1Name, p1Wins);
+                    tbPlayerOne.Text = playerone.Name;
+
+                    lbPlayers.Visible = false;
+                    lblChoose.Visible = false;
+                    lblDate.Visible = false;
+                    lblWins.Visible = false;
+                    tbNewPlayer.Visible = false;
+                    btnNew.Visible = false;
+                    btnLoad.Visible = false;
+                    lblPlayerName.Visible = false;
+                }
+                else if (lblChoose.Text == "Choose a Player2")
+                {
+
+                    p2Name = lblPlayerName.Text;
+                    p2Wins = int.Parse(lblWins.Text);
+
+                    var playertwo = new Players(p2Name, p2Wins);
+                    tbPlayerTwo.Text = playertwo.Name;
+
+                    lbPlayers.Visible = false;
+                    lblChoose.Visible = false;
+                    lblDate.Visible = false;
+                    lblWins.Visible = false;
+                    tbNewPlayer.Visible = false;
+                    btnNew.Visible = false;
+                    btnLoad.Visible = false;
+                    lblPlayerName.Visible = false;
+                    cbPlayerTwo.Enabled = true;
+                }
+                else if (lblChoose.Text == "Choose a Player3")
+                {
+
+                    p3Name = lblPlayerName.Text;
+                    p3Wins = int.Parse(lblWins.Text);
+
+                    var playerthree = new Players(p3Name, p3Wins);
+                    tbPlayerThree.Text = playerthree.Name;
+
+                    lbPlayers.Visible = false;
+                    lblChoose.Visible = false;
+                    lblDate.Visible = false;
+                    lblWins.Visible = false;
+                    tbNewPlayer.Visible = false;
+                    btnNew.Visible = false;
+                    btnLoad.Visible = false;
+                    lblPlayerName.Visible = false;
+                    cbPlayerThree.Enabled = true;
+                }
+                else if (lblChoose.Text == "Choose a Player4")
+                {
+
+                    p4Name = lblPlayerName.Text;
+                    p4Wins = int.Parse(lblWins.Text);
+
+                    var playerfour = new Players(p4Name, p4Wins);
+                    tbPlayerFour.Text = playerfour.Name;
+
+                    lbPlayers.Visible = false;
+                    lblChoose.Visible = false;
+                    lblDate.Visible = false;
+                    lblWins.Visible = false;
+                    tbNewPlayer.Visible = false;
+                    btnNew.Visible = false;
+                    btnLoad.Visible = false;
+                    lblPlayerName.Visible = false;
+                    cbPlayerFour.Enabled = true;
+                }
+            }
+        }
+
+        private void btnLoadPtwo_Click(object sender, EventArgs e)
+        {
+            lblChoose.Text = "Choose a Player2";
+
+            lbPlayers.Visible = true;
+            lblChoose.Visible = true;
+            lblDate.Visible = true;
+            lblWins.Visible = true;
+            tbNewPlayer.Visible = true;
+            btnNew.Visible = true;
+            btnLoad.Visible = true;
+            lblPlayerName.Visible = true;
+        }
+
+        private void btnLoadPthree_Click(object sender, EventArgs e)
+        {
+            lblChoose.Text = "Choose a Player3";
+
+            lbPlayers.Visible = true;
+            lblChoose.Visible = true;
+            lblDate.Visible = true;
+            lblWins.Visible = true;
+            tbNewPlayer.Visible = true;
+            btnNew.Visible = true;
+            btnLoad.Visible = true;
+            lblPlayerName.Visible = true;
+        }
+
+        private void btnLoadPfour_Click(object sender, EventArgs e)
+        {
+            lblChoose.Text = "Choose a Player4";
+
+            lbPlayers.Visible = true;
+            lblChoose.Visible = true;
+            lblDate.Visible = true;
+            lblWins.Visible = true;
+            tbNewPlayer.Visible = true;
+            btnNew.Visible = true;
+            btnLoad.Visible = true;
+            lblPlayerName.Visible = true;
         }
 
         private void Startup_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
-        }
-
-        private void btnLoadPlayerOne_Click(object sender, EventArgs e)
-        {
-
-            ChoosePlayer choose = new ChoosePlayer();
-
-            choose.ShowDialog();
-            
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            var pClass = new Players();
-            pOne = pClass.Name;
-
-            tbPlayerOne.Text = pOne;
+            Application.Exit();
         }
     }
+
 }
+
