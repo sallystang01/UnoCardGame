@@ -103,7 +103,9 @@ namespace Uno
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-           
+            var pClass = new Players();
+
+
 
             if (p1Name == "")
             {
@@ -116,8 +118,8 @@ namespace Uno
 
                 p1Name = lblPlayerName.Text;
                 p1Wins = int.Parse(lblWins.Text);
-                Players players = new Players(p1Name, p1Wins);
-
+                pClass.Parse(p1Name);
+                this.Close();
             }
             }
         }

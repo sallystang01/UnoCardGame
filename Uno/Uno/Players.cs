@@ -9,48 +9,57 @@ namespace Uno
     class Players
     {
 
+        public string Name;
 
-        //backing fields
-        string pName;
-        int pWins;
-
-        public static Players player1
-            ;
-
-        public Players(string Name)
+        public Players Parse(string str)
         {
-            pName = Name;
-            pWins = 0;
+            var player = new Players();
+            player.Name = str;
 
-        }
-
-        public Players(string Name, int Wins)
-        {
-            pName = Name;
-            pWins = Wins;
+            return player;
         }
 
 
-        public string Name
-        {
-            get
-            {
-                return pName;
-            }
-            set
-            {
-                pName = value;
-            }
-        }
-        
-        public static Players GetPlayers1()
-        {
-            return player1;
-        }
-         
-        
-        
-          
-        
     }
 }
+
+//        //backing fields
+//        string pName;
+//        int pWins;
+
+               
+        
+//        public Players(string Name)
+//        {
+//            pName = Name;
+//            pWins = 0;
+
+//        }
+
+//        public Players(string Name, int Wins)
+//        {
+//            pName = Name;
+//            pWins = Wins;
+//        }
+
+
+//        public string Name
+//        {
+//            get
+//            {
+//                return pName;
+//            }
+//            set
+//            {
+//                pName = value;
+//            }
+
+//        }
+
+
+
+        
+
+
+//    }
+//}

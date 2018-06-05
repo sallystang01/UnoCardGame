@@ -26,8 +26,14 @@ namespace Uno
         private void Startup_Load(object sender, EventArgs e)
         {
 
-            pOne = Players.player1.Name;
-            lblPlayerOne.Text = pOne;
+
+
+          
+
+           
+            
+            
+           
            
             try
             {
@@ -201,8 +207,17 @@ namespace Uno
             ChoosePlayer choose = new ChoosePlayer();
 
             choose.ShowDialog();
-            this.Hide();
+            
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            var pClass = new Players();
+            pOne = pClass.Name;
+
+            tbPlayerOne.Text = pOne;
         }
     }
 }
