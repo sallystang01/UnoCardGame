@@ -18,11 +18,12 @@ namespace Uno
             InitializeComponent();
         }
 
-
+        // Backing variables for things later on
         public string[] Player = new string[20];
         public int[] Wins = new int[20];
         public string[] DatePlayed = new string[20];
 
+        // Variables that will be passed to my Players class later on
         public string p1Name;
         public int p1Wins;
         public string p2Name;
@@ -32,20 +33,24 @@ namespace Uno
         public string p4Name;
         public int p4Wins;
 
-        public string pOne;
+        // Establishes my Game form that will be used later on
         public static Game frmGame = new Game();
+
         private void Startup_Load(object sender, EventArgs e)
         {
 
-
+            // Error handeling
             try
             {
+
+                // Stream reader that will read my players.csv file
                 StreamReader sr;
                 string line;
                 int count = 0;
                 char[] delim = { ',' };
 
                 sr = File.OpenText("Players.csv");
+
 
                 while (!sr.EndOfStream)
                 {
@@ -73,6 +78,7 @@ namespace Uno
 
             try
             {
+                // Initialization of controls on the form
                 tbPlayerOne.Text = "P1";
                 cbPlayerTwo.Enabled = false;
                 cbPlayerThree.Enabled = false;
@@ -99,34 +105,9 @@ namespace Uno
 
         }
 
-        private void cbPlayerTwo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-            if (cbPlayerTwo.Text != "Player Type..")
-            {
-                btnLoadPtwo.Enabled = true;
-                btnLoadPtwo.Focus();
-            }
-        }
-
-        private void cbPlayerThree_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbPlayerThree.Text != "Player Type..")
-            {
-                btnLoadPthree.Enabled = true;
-                btnLoadPthree.Focus();
-            }
-        }
-
-        private void cbPlayerFour_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbPlayerFour.Text != "Player Type..")
-            {
-                btnLoadPfour.Enabled = true;
-                btnLoadPfour.Focus();
-            }
-        }
-
+        
+        // Combo box control to select how many players are going to be playing
+        // Changes control propertiest depending on the number of players selected
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbNumberOfPlayers.Text == "2")
@@ -155,7 +136,7 @@ namespace Uno
 
             try
             {
-
+                // Prevents game from starting if these criteria are not met
                 if (cbPlayerTwo.Enabled == false)
                 {
                     MessageBox.Show("You need at least two players to get started!");
@@ -176,6 +157,7 @@ namespace Uno
 
                 else
                 {
+                    // If the criteria was met, start the game and set the control's properties to the below
                     this.Visible = false;
                     frmGame.lblGamePlayerOne.Text = tbPlayerOne.Text;
                     frmGame.lblGamePlayerTwo.Text = tbPlayerTwo.Text;
@@ -191,6 +173,7 @@ namespace Uno
 
             }
             try
+                // Determines how many players are playing so it can change properties of controls on Game form.
                 {
                 if (cbNumberOfPlayers.Text == "2")
                 {
@@ -230,43 +213,10 @@ namespace Uno
 
         
 
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (tbNewPlayer.Text == "")
-                {
-                    MessageBox.Show("Please enter a name!");
+        
 
-                }
-                else
-                {
-
-                    string newPlayer = tbNewPlayer.Text;
-                    StreamWriter sw = new StreamWriter("Players.csv", true);
-                    sw.WriteLine("{0},{1},{2}", newPlayer, DateTime.Now.Date, 0);
-                    lbPlayers.Items.Add(newPlayer);
-                    sw.Close();
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void lbPlayers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lblWins.Text = Wins[lbPlayers.SelectedIndex].ToString();
-            lblDate.Text = DatePlayed[lbPlayers.SelectedIndex];
-            lblPlayerName.Text = Player[lbPlayers.SelectedIndex];
-        }
-
-       
-
-
+        // Updates the labels and displays the information stored in the players.csv file for 
+        // the current player that is selected
         private void lbPlayers_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             lblWins.Text = Wins[lbPlayers.SelectedIndex].ToString();
@@ -279,7 +229,7 @@ namespace Uno
         private void btnNew_Click_1(object sender, EventArgs e)
         {
             try
-            {
+            { // If not text was entered then display a messagebox
                 if (tbNewPlayer.Text == "")
                 {
                     MessageBox.Show("Please enter a name!");
@@ -287,7 +237,7 @@ namespace Uno
                 }
                 else
                 {
-
+                    // Enter the new name into the palyers.csv text file
                     string newPlayer = tbNewPlayer.Text;
                     StreamWriter sw = new StreamWriter("Players.csv", true);
                     sw.WriteLine("{0},{1},{2}", newPlayer, DateTime.Now.Date, 0);
@@ -305,6 +255,8 @@ namespace Uno
 
         private void btnLoadPone_Click(object sender, EventArgs e)
         {
+
+            // When this button is clicked, the following will happen:
             lblChoose.Text = "Choose a Player1";
 
             lbPlayers.Visible = true;
@@ -320,7 +272,7 @@ namespace Uno
 
         private void btnLoad_Click_2(object sender, EventArgs e)
         {
-
+            // If no name was selected
 
             if (p1Name == "")
             {
@@ -330,7 +282,7 @@ namespace Uno
             }
             else
             {
-
+                // Sends information about selected player to my players class then sends it back to the form
                 if (lblChoose.Text == "Choose a Player1")
                 {
 
@@ -411,6 +363,7 @@ namespace Uno
 
         private void btnLoadPtwo_Click(object sender, EventArgs e)
         {
+            // When this button is clicked, the following will happen:
             lblChoose.Text = "Choose a Player2";
 
             lbPlayers.Visible = true;
@@ -425,6 +378,7 @@ namespace Uno
 
         private void btnLoadPthree_Click(object sender, EventArgs e)
         {
+            // When this button is clicked, the following will happen:
             lblChoose.Text = "Choose a Player3";
 
             lbPlayers.Visible = true;
@@ -439,6 +393,7 @@ namespace Uno
 
         private void btnLoadPfour_Click(object sender, EventArgs e)
         {
+            // When this button is clicked, the following will happen:
             lblChoose.Text = "Choose a Player4";
 
             lbPlayers.Visible = true;

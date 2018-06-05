@@ -169,7 +169,7 @@
             this.cbPlayerTwo.Name = "cbPlayerTwo";
             this.cbPlayerTwo.Size = new System.Drawing.Size(93, 21);
             this.cbPlayerTwo.TabIndex = 10;
-            this.cbPlayerTwo.SelectedIndexChanged += new System.EventHandler(this.cbPlayerTwo_SelectedIndexChanged);
+           
             // 
             // cbPlayerThree
             // 
@@ -182,7 +182,7 @@
             this.cbPlayerThree.Name = "cbPlayerThree";
             this.cbPlayerThree.Size = new System.Drawing.Size(93, 21);
             this.cbPlayerThree.TabIndex = 11;
-            this.cbPlayerThree.SelectedIndexChanged += new System.EventHandler(this.cbPlayerThree_SelectedIndexChanged);
+           
             // 
             // cbPlayerFour
             // 
@@ -195,7 +195,7 @@
             this.cbPlayerFour.Name = "cbPlayerFour";
             this.cbPlayerFour.Size = new System.Drawing.Size(93, 21);
             this.cbPlayerFour.TabIndex = 12;
-            this.cbPlayerFour.SelectedIndexChanged += new System.EventHandler(this.cbPlayerFour_SelectedIndexChanged);
+           
             // 
             // label1
             // 
