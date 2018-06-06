@@ -64,7 +64,10 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblWelcome.Font = new System.Drawing.Font("Book Antiqua", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.Black;
             this.lblWelcome.Location = new System.Drawing.Point(138, 19);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(251, 33);
@@ -83,7 +86,10 @@
             // lblPlayerOne
             // 
             this.lblPlayerOne.AutoSize = true;
+            this.lblPlayerOne.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPlayerOne.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerOne.ForeColor = System.Drawing.Color.Black;
             this.lblPlayerOne.Location = new System.Drawing.Point(52, 151);
             this.lblPlayerOne.Name = "lblPlayerOne";
             this.lblPlayerOne.Size = new System.Drawing.Size(86, 23);
@@ -94,7 +100,10 @@
             // lblPlayerTwo
             // 
             this.lblPlayerTwo.AutoSize = true;
+            this.lblPlayerTwo.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPlayerTwo.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerTwo.ForeColor = System.Drawing.Color.Black;
             this.lblPlayerTwo.Location = new System.Drawing.Point(52, 178);
             this.lblPlayerTwo.Name = "lblPlayerTwo";
             this.lblPlayerTwo.Size = new System.Drawing.Size(86, 23);
@@ -113,7 +122,10 @@
             // lblPlayerThree
             // 
             this.lblPlayerThree.AutoSize = true;
+            this.lblPlayerThree.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPlayerThree.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerThree.ForeColor = System.Drawing.Color.Black;
             this.lblPlayerThree.Location = new System.Drawing.Point(52, 203);
             this.lblPlayerThree.Name = "lblPlayerThree";
             this.lblPlayerThree.Size = new System.Drawing.Size(86, 23);
@@ -132,7 +144,10 @@
             // lblPlayerFour
             // 
             this.lblPlayerFour.AutoSize = true;
+            this.lblPlayerFour.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPlayerFour.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerFour.ForeColor = System.Drawing.Color.Black;
             this.lblPlayerFour.Location = new System.Drawing.Point(52, 229);
             this.lblPlayerFour.Name = "lblPlayerFour";
             this.lblPlayerFour.Size = new System.Drawing.Size(86, 23);
@@ -169,7 +184,6 @@
             this.cbPlayerTwo.Name = "cbPlayerTwo";
             this.cbPlayerTwo.Size = new System.Drawing.Size(93, 21);
             this.cbPlayerTwo.TabIndex = 10;
-           
             // 
             // cbPlayerThree
             // 
@@ -182,7 +196,6 @@
             this.cbPlayerThree.Name = "cbPlayerThree";
             this.cbPlayerThree.Size = new System.Drawing.Size(93, 21);
             this.cbPlayerThree.TabIndex = 11;
-           
             // 
             // cbPlayerFour
             // 
@@ -195,12 +208,14 @@
             this.cbPlayerFour.Name = "cbPlayerFour";
             this.cbPlayerFour.Size = new System.Drawing.Size(93, 21);
             this.cbPlayerFour.TabIndex = 12;
-           
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(122, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(273, 21);
@@ -225,7 +240,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(129, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 18);
@@ -398,6 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(557, 406);
             this.Controls.Add(this.btnLoadPfour);
             this.Controls.Add(this.btnLoadPtwo);

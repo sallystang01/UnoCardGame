@@ -9,14 +9,19 @@ namespace Uno
     class Players
     {
 
+        //Backing fields
         public string Name;
         public int Wins;
 
+
+        // Constrctor uno
         public Players(string name)
         {
             this.Name = name;
+            this.Wins = 0;
         }
 
+        // Constructor dos
         public Players(string name, int wins)
         {
             this.Name = name;
@@ -25,43 +30,6 @@ namespace Uno
 
     }
 }
-
-//        //backing fields
-//        string pName;
-//        int pWins;
-
-               
-        
-//        public Players(string Name)
-//        {
-//            pName = Name;
-//            pWins = 0;
-
-//        }
-
-//        public Players(string Name, int Wins)
-//        {
-//            pName = Name;
-//            pWins = Wins;
-//        }
-
-
-//        public string Name
-//        {
-//            get
-//            {
-//                return pName;
-//            }
-//            set
-//            {
-//                pName = value;
-//            }
-
-//        }
-
-
-
-        
 
 
 //    }
