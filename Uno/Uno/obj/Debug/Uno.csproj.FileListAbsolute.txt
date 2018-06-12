@@ -20,4 +20,4 @@ C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.csproj.GenerateResource.cache
 C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.csproj.CoreCompileInputs.cache
 C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.exe
 C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.pdb
-C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.csprojResolveAssemblyReference.cache
+C:\Data\UnoCardGame\Uno\Uno\obj\Debug\Uno.csprojAssemblyReference.cache

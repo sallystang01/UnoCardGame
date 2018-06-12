@@ -27,10 +27,18 @@ namespace Uno
         private void Game_Load(object sender, EventArgs e)
         {
 
-            Random rand = new Random();
-            int i;
 
-            pictureBox1.Image = ilCards.Images[2];
+            List<Image> cards = new List<Image>();
+
+            int index;
+            index = 0;
+
+            for (index = 0; index < ilCards.Images.Count; index++)
+            {
+
+                cards.Add(ilCards.Images[index]);
+                pictureBox1.Image = cards[index];
+            }
             
         }
 
